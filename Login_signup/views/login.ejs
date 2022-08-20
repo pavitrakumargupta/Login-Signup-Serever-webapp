@@ -1,0 +1,83 @@
+<%- include('partials/header_lg_sign') %>
+    <title>Login page</title>
+</head>
+<body>
+
+    <!-- form start -->
+    <form class="container py-5 bg-light main" onsubmit="return validation()"
+    action="/" method="post">
+        
+        <div class="col-12 p-0 m-0 d-flex justify-content-center signup">Login</div>
+
+        <% if (warning) { %>
+            <div class="warning">
+                *<%=message%>
+            </div>
+          <% }%>
+          
+
+         
+        <!-- erp field -->
+        <div class="row col-9 p-0 d-flex justify-content-center bg-light input_section">
+            <i class="fa fa-id-card-o d-flex align-self-center" aria-hidden="true"></i>
+            <input class="w-75 px-2 bg-light" id="erp" type="email" 
+            name="id" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="ERP Id" autocomplete="off" required>
+        </div>
+
+    
+        <!-- password field -->
+        <div class="row col-9 p-0 d-flex justify-content-center bg-light input_section">
+            <i class="fa fa-lock d-flex align-self-center" aria-hidden="true"></i>
+            <input class="w-75 px-2 bg-light" type="password" name="password" id="pswrd" placeholder="Password" autocomplete="off" required>
+
+            <!-- Checkbox -->
+            <div class="togglearea d-flex align-self-center"><label for="toggle"><i class="fa fa-eye" aria-hidden="true" id="openeye"></i></label></div>
+            <input type="checkbox" onclick="Toggle()" id="toggle">
+        </div>
+        
+        <!-- remember me -->
+        <div class="row col-sm-10 p-0 m-auto d-flex justify-content-around rememberAndforget">
+            <span class="col-sm-5 rememberme"><input type="checkbox" name="activate_session" > Remember Me</span>
+            <a href="#" class="col-sm-5" id="forgetpass">Forget Password?</a>
+        </div>
+        
+        <!-- Submit -->
+       
+        <div class="row mt-3 p-0 submit">
+            <input class="col-sm-5 mt-2 mx-auto p-0" type="submit" value="Submit">  
+        </div>
+       
+      
+        
+        <!-- remember me -->
+        <div class="row col-sm-10 p-0 m-auto d-flex justify-content-around  signupgo">
+            <a href="signup" class="col-sm-5" id="signing">signup</a></div>
+
+    </form>
+    <!-- form end -->
+
+    <script type="text/javascript">
+        $("#openeye").click(function(){
+            $("#closeeye").show(700);
+            $("#openeye").hide(700);
+        });
+    </script>   
+
+    <script type="text/javascript">
+        function Toggle(){
+            var x = document.getElementById('pswrd');
+
+            if(x.type === "password"){
+                x.type = "text";
+            }
+            else {
+                x.type = "password";
+            }
+        }
+    </script>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

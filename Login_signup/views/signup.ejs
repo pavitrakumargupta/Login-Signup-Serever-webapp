@@ -1,0 +1,296 @@
+<%- include('partials/header_lg_sign') %>
+    <title>sign up</title>
+  </head>
+  <body>
+    <!-- form start -->
+    <form
+      class="container py-5 m-auto bg-light main"
+      onsubmit="return validation()"
+      action="/signup"
+      method="post"
+    >
+      <div class="col-12 p-0 m-0 d-flex justify-content-center signup">
+        Sign Up
+      </div>
+
+      <% if (warning) { %>
+        <div class="warning">
+             *<%=message%>
+        </div>
+      <% }%>
+
+      <!-- name field -->
+      <div
+        class="row col-9 p-0 d-flex justify-content-center bg-light input_section"
+      >
+        <i
+          class="fa fa-user-circle-o d-flex align-self-center"
+          aria-hidden="true"
+        ></i>
+        <input
+          class="w-75 px-2 bg-light"
+          id="fname"
+          type="text"
+          pattern="[A-Za-z]{2-30}"
+          placeholder="Username"
+          autocomplete="off"
+          required
+          name="username"
+        />
+      </div>
+
+      <!-- erp field -->
+      <div
+        class="row col-9 p-0 d-flex justify-content-center bg-light input_section"
+      >
+        <i
+          class="fa fa-id-card-o d-flex align-self-center"
+          aria-hidden="true"
+        ></i>
+        <input
+          class="w-75 px-2 bg-light"
+          id="erp"
+          type="email"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+          placeholder="ERP Id"
+          autocomplete="off"
+          required
+          name="id"
+        />
+      </div>
+
+      <!-- Phone number field -->
+      <div
+        class="row col-9 p-0 d-flex justify-content-center bg-light input_section"
+      >
+        <i
+          class="fa fa-mobile d-flex align-self-center mobile_icon"
+          aria-hidden="true"
+          style="font-size: 37px"
+        ></i>
+        <input
+          class="w-75 px-2 bg-light"
+          id="mobile"
+          type="tel"
+          pattern="[0-9]{10}"
+          placeholder="Phone Number"
+          autocomplete="off"
+          required
+          name="number"
+        />
+      </div>
+
+      <div
+        class="row col-sm-10 m-auto d-flex justify-content-around dropdown_container"
+      >
+        <!-- Course -->
+        <select class="col-sm-5 bg-light course_dropdown" id="course" name="course" required>
+          <option value="" disabled selected >--Course--</option>
+        </select>
+
+        <!-- Branch -->
+        <select class="col-sm-6 bg-light branch_dropdown" id="branch" name="branch" required>
+          <option value="" disabled selected="selected">--Branch--</option>
+        </select>
+      </div>
+
+      <!-- Semester field -->
+      <div
+        class="row col-9 p-0 d-flex justify-content-center bg-light input_section"
+      >
+        <span class="icon d-flex align-self-center"
+          ><img src="img/sem.png" alt="search icon"
+        /></span>
+        <input
+          class="w-75 px-2 bg-light"
+          id="course"
+          type="text"
+          pattern="[1-8]"
+          placeholder="Semester"
+          autocomplete="off"
+          name="semester"
+          required
+        />
+      </div>
+
+      <!-- password field -->
+      <div
+        class="row col-9 p-0 d-flex justify-content-center bg-light input_section"
+      >
+        <i class="fa fa-lock d-flex align-self-center" aria-hidden="true"></i>
+        <input
+          class="w-75 px-2 bg-light"
+          type="password"
+          name="password"
+          id="pswrd"
+          pattern="(?=.*\d)(?=.*?[#?!@$%^&*])(?=.*[a-z])(?=.*[A-Z]).{6,}"
+          title="your password must contain at least one  number and one uppercase and lowercase letter,and one special characters [#?!@$%^&*], and at least 6 or more characters"
+          placeholder="Password"
+          autocomplete="off"
+          required
+        />
+
+        <!-- Checkbox -->
+        <div class="togglearea d-flex align-self-center">
+          <label for="toggle"
+            ><i class="fa fa-eye" aria-hidden="true" id="openeye"></i
+          ></label>
+        </div>
+        <input type="checkbox" onclick="Toggle()" id="toggle" />
+      </div>
+      <div
+        class="row col-9 p-0 d-flex justify-content-center bg-light input_section"
+      >
+        <i class="fa fa-lock d-flex align-self-center" aria-hidden="true"></i>
+        <input
+          class="w-75 px-2 bg-light"
+          type="password"
+          name="confirm_password"
+          id="pswrd"
+          placeholder="Confirm_Password"
+          autocomplete="off"
+          required
+        />
+      </div>
+
+      <!-- radio button -->
+      <div class="row mt-4">
+        <div
+          class="col-sm-6 m-auto d-sm-flex justify-content-around"
+          style="text-align: center"
+          
+        >
+          <label>
+            <input
+              class="mx-1"
+              type="radio"
+              name="type"
+              value="dayScholar"
+              required
+            />Day Scholar
+          </label>
+          <label>
+            <input
+              class="mx-1"
+              type="radio"
+              name="type"
+              value="hostler"
+            />Hostler
+          </label>
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <div class="row mt-3 p-0 submit">
+        <input
+          class="col-sm-5 mt-2 mx-auto p-0"
+          id="submitBtn"
+          type="submit"
+          src="/Login/index.html"
+          value="Submit"
+        />
+      </div>
+      <div class="row col-sm-10 p-0 m-auto d-flex justify-content-around  signupgo">
+        <a href="login" class="col-sm-5" id="signing">Login</a></div>
+    </form>
+    <!-- form end -->
+
+    <!-- Cascading dropdown -->
+    
+    <script>
+      var courseObject = {
+        "B Tech": {
+          "Information Technology": [],
+          "Computer Science and Engineering": [],
+          "Mechanical Engineering": [],
+          "Electronics and Communication Engineering": [],
+          "Computer Science and Business System": [],
+          "Data Science": [],
+          "Artificial Intelligence": [],
+          "Machine Learning": [],
+          "Information Technology": [],
+        },
+
+        "M Tech": {
+          Biotechnology: [],
+          "Computer Science and Engineering": [],
+          "Mechanical Engineering": [],
+          "VLSI Design": [],
+        },
+
+        "B Tech and M Tech integrated": {
+          "Computer Science and Engineering": [],
+        },
+
+        "B Pharm": {
+          "B Pharm (PCI Approved)": [],
+        },
+
+        "D Pharm": {
+          "D Pharm": [],
+        },
+
+        "M Pharm": {
+          "Pharmaceutical Chemistry": [],
+          Pharmaceutics: [],
+          Pharmacology: [],
+        },
+
+        MBA: {
+          MBA: [],
+        },
+
+        MCA: {
+          MCA: [],
+        },
+      };
+      window.onload = function () {
+        var courses = document.getElementById("course");
+        var branches = document.getElementById("branch");
+        for (var x in courseObject) {
+          courses.options[courses.options.length] = new Option(x, x);
+        }
+        courses.onchange = function () {
+          //empty Chapters- and Topics- dropdowns
+          branches.length = 1;
+          //display correct values
+          for (var y in courseObject[this.value]) {
+            branches.options[branches.options.length] = new Option(y, y);
+          }
+        };
+      };
+    </script>
+    <script type="text/javascript">
+      $("#openeye").click(function () {
+        $("#closeeye").show(700);
+        $("#openeye").hide(700);
+      });
+    </script>
+    <script type="text/javascript">
+      function Toggle() {
+        var x = document.getElementById("pswrd");
+
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+      }
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

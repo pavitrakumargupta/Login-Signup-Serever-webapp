@@ -1,0 +1,405 @@
+html,body{
+    min-height: 100%;
+    margin: 0;
+  }
+  .container{
+    background-color:#FCF3F3;
+    height: 790px;
+    background-size: cover;
+  
+  }
+  a { color: inherit; } 
+  nav {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 90px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 4px rgba(168, 165, 165, 0.55);
+  }
+  .logo{
+    position: absolute;
+    height:100px;
+    border-radius: 50px;
+    margin-left: 10px;
+    margin-top: -6px;
+     
+  }
+  
+  .lg{
+    height:75%;
+    margin: 12%;
+    border-radius: 50px;
+  }
+  
+  nav ul li{
+    display: inline-block;
+    line-height: 2%;
+    margin-top: 15px;
+  }
+  .searchbox {
+    position: absolute;
+    width: 40%;
+    height: 50px;
+    left: 17.5%;
+    background: #fffefe;
+    border: 2px solid #817d7d;
+    box-sizing: border-box;
+    border-radius: 30px;
+  }
+  .searchsign {
+    position: absolute;
+    width:30px ;
+    left: 1%;
+    top: 18%;
+  }
+  .searchtext {
+    position: absolute;
+    width: 83%;
+    height: 60%;
+    top: 8%;
+    left: 7%;
+    border: #fcf3f3;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 170%;
+    background-color: #fffefe;
+    color: #666363;
+    
+  }
+  input:focus {
+    outline:none;
+  }
+  
+  .filter {
+    position: absolute;
+    width: 30px;
+    top: 18%;
+    right:2%;
+  }
+  .help {
+    position: absolute;
+    height: 45px;
+    left: 65%;
+    top: 8px;
+  }
+  .setting {
+    position: absolute;
+    top: 10px;
+    height: 40px;
+    right: 20%;
+  }
+  .logout{
+    position: absolute;
+    background-color:#6C34E0;
+    color: #ffffff;
+    right: 50px;
+    border: 0;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 13px;
+  }
+  .logout.active,.logout:hover{
+    background-color: #472D91;
+  }
+  .checkbtn{
+    font-size: 30px;
+    color:#6C34E0 ;
+    float:right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+  #check{
+    position:absolute;
+    display: none;
+  }
+  
+  .purple-container{
+    position: absolute;
+    background-color: #6C34E0;
+    width: 65%;
+    height: 225px;
+    border-radius: 200px; 
+    top: 150px;
+    left: 14%;
+    background-size: cover;
+  
+  }
+  .p-tittle{
+    position:relative;
+    color: #ffffff;
+    letter-spacing: 5px;
+    text-align: center;
+    font-family: "Lemon Juice"; src: url("//db.onlinewebfonts.com/t/57e6c7b216f942c4651a586db3338258.eot");
+    font-size: 400%;
+    line-height: 1px;
+    top: -9%;
+  }
+  .circle-container{
+    position: absolute;
+    background-color: #472D91;
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    top: 35%;
+    left: 2.5%;
+  }
+  .circle-container:hover{
+    background-color:aqua;
+  }
+  .d{
+    height:75%;
+    margin: 10%;
+  }
+  .two{
+    left: 18%;
+  }
+  .three{
+    left: 36%;
+  }
+  .four{
+    left: 54%;  
+  }
+  .five{
+    left: 72%;   
+  }
+  .six{
+    left: 90%;
+  }
+  .p-text{
+    margin-top:1% ;
+    color: #ffffff;
+    letter-spacing: 1px;
+    font-size:95%;
+    text-align: center;
+    font-family: "Poetsen One"; src: url("//db.onlinewebfonts.com/t/e7f249e71a563eed9c495835657eb9c2.eot");
+  }
+  .lowerprop{
+    position: absolute;
+    background-color: #ffffff;
+    height: 250px;
+    width: 15%;
+    border-radius: 40px;
+    box-shadow: 5px 5px rgba(211, 196, 196, 0.55);
+    left: 8%;
+    top: 470px;
+  }
+  .lowerprop:hover{
+    background-color: antiquewhite;
+  }
+  .injoin{
+    height: 55%;
+    width: 90%;
+    margin-left: 20px;
+  }
+  .chat{
+    margin-left: 32.5%;
+  }
+  .join{
+    margin-left: 65%;
+  }
+  .cmnt{
+    margin-top: -2%;
+  }
+  .lp{
+    text-align: center;
+    
+    color: #6B6565;
+    font-size: 20px;
+    font-family: "Poetsen One"; src: url("//db.onlinewebfonts.com/t/e7f249e71a563eed9c495835657eb9c2.eot");
+  }
+  @media(max-width:1146px){
+    .container{
+        min-height: 775px;
+    }
+    .searchsign,.filter{
+        width: 25px;
+    }
+    .searchtext{
+        width:80%;
+        left: 8.9%;
+    }
+    .logout{
+        right: 30px;
+    }
+    .setting{
+        right: 22%;
+    }
+    .help{
+        left: 62%;
+    }
+     .purple-container{
+        width: 70%;
+        height: 275px;
+        left: 15%;
+        margin-top: -30px;
+    } 
+    .p-tittle{
+        font-size: 250%;
+        line-height: 1px;
+        top: -4%;
+    }
+    .circle-container{  
+        top: 18%;
+        left: 4%;
+    }
+    .two{
+        left: 23%;
+    }
+    .three{
+        left: 43%;
+    }
+    .four{
+        left: 63%;  
+    }
+    .five{
+        left: 82%;   
+    }
+    .six{  
+        top:65%;
+        left: 43%;
+    }
+    .bookmark{
+        height:65%;
+        margin: 12%;
+    }
+    .p-text{
+        margin-top: 2%;
+    } 
+    .lowerprop{   
+        height: 30%;
+        width: 18%;
+        left: 5%;
+        top: 450px;
+        min-height: 200px;
+    }
+  }
+  @media(max-width:780px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        z-index: 1;
+        position: fixed;
+        width: 43%;
+        height: 100vh ;
+        background-color:#6C34E0;
+        margin-top: 0px;
+        left: -51%;
+         transition: all .5s;
+    }
+    nav ul li{
+        display:block;
+    }
+    .cont{
+        left: 16px;
+        width: 93%;
+        background-color:#ffffff;
+    }
+    .help{
+        width: 45px;
+        left: 15px;
+    }
+    .setting{
+        width: 42px;
+        left: 15px;
+    }
+    .cont1{
+        top: 60px;
+        width: 93%;
+        height: 55px;
+        border-radius: 30px;
+    }
+    .cont2{
+        top: 130px;
+        width: 93%;
+        height: 55px;
+        border-radius: 30px;
+    }
+    .logout{
+        top: 220px;
+        color: black;
+        font-size: 25px;
+        text-align: center;
+        
+        height: 50px;
+        border-radius: 30px;
+    }
+    .cont:hover,.cont.active{
+        background-color: rgb(248, 222, 188);
+    }
+    .searchtext{
+        width: 73%;
+        left: 12%;
+        background: transparent;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+    .purple-container{
+        width: 80%;
+        height: 300px;
+        left: 8%;
+        margin-top: -30px;
+        border-radius: 100px;
+    } 
+    .p-tittle{
+        top: -8px;
+        font-size: 200%;
+        line-height: 5px;
+    }
+    .circle-container{  
+        top: 14%;
+        left: 12%;
+    }
+    .two{
+        left: 43%;
+    }
+    .three{
+        left: 78%;
+    }
+    .four{
+        top: 58%;
+        left: 12%;  
+    }
+    .five{
+        top:58%;
+        left: 43%;   
+    }
+    .six{  
+        top:58%;
+        left: 78%;
+    }
+  
+    .p-text{
+        margin-top: 5%;
+    } 
+    .lowerprop{
+         
+        min-height: 190px;
+        min-width: 150px;
+        left: 2.5%;
+        
+        top: 450px;
+        min-height: 200px;
+    }
+    .chat{
+        margin-left: 32.5%;
+      }
+    .join{
+        margin-left: 65%;
+      }
+    .cmnt{
+        margin-top: -2%;
+    }
+    .lp{
+        text-align: center;
+        
+        color: #6B6565;
+        font-size: 20px;
+        font-family: "Poetsen One"; src: url("//db.onlinewebfonts.com/t/e7f249e71a563eed9c495835657eb9c2.eot");
+      }
+  }

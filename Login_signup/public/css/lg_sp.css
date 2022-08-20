@@ -1,0 +1,201 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #962cc7;
+    font-family: Quicksand, Calibri, sans-serif;
+    margin-top: 50px;
+}
+
+.main{
+    width: 500px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 53px -1px rgba(0,0,0,0.75);
+}
+
+.login{
+    /* text-align: center;    */
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.signup{
+    /* text-align: center;    */
+    font-size: 30px;
+    font-weight: bold;
+}
+.warning{
+    position: relative;
+    margin-left: 15%;
+    margin-top: 5%;
+    margin-bottom: -5%;
+    width: 60%; 
+    color: red; 
+    background-color:rgb(255, 214, 195)
+}
+.input_section{
+    padding: 0 20px;
+    border: none;
+    border-radius: 20px;
+    margin: 45px auto;
+    height: fit-content;
+    box-shadow: 0px 1px 27px -3px rgb(128, 96, 158, .75);
+}
+
+.input_section i{
+    font-size: 28px;
+    color: blueviolet;
+}
+
+.input_section img{
+    width: 30px;
+}
+
+input[type="text"], input[type="email"], input[type="tel"]{
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    height: 40px;
+}
+
+/* login specificly */
+input[type="text"], input[type="password"]{
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    height: 40px;
+}
+
+#openeye, #closeeye{
+    font-size: 18px;
+}
+/* eye toggle */
+.togglearea {height: 25px}
+#toggle {display: none}
+.togglearea label {background-color: #fff5d0;height: 15px;width: 15px}
+.togglearea label i {position: absolute}
+.togglearea label #closeeye {display: none}
+
+.course_dropdown, .branch_dropdown{
+    height: 40px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    will-change: transform;
+    transition: transform 450ms;
+    box-shadow: 0px 1px 27px -3px rgb(128, 96, 158, .75);
+}
+.course_dropdown:hover, .branch_dropdown:hover {
+    transform: translateY(-3px);
+}
+input[type="submit"]{
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 250ms;
+}
+input[type="text"], input[type="password"]{
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    height: 40px;
+}
+.submit input:hover{
+    /* background-color: white;
+    color: blueviolet; */
+     
+    transform: scale(1.1);
+    box-shadow: 0px 1px 24px -2px rgba(0,0,0,0.75);
+    -webkit-transition: all .2s ease-in-out;
+}
+
+
+
+.signupgo{
+    text-align: center;
+}
+
+
+@media screen and (max-width: 576px){
+    body{
+        margin-top: 10px;
+        font-size: 12px;
+    }
+
+    .main{
+        width: fit-content;
+    }
+
+    .input_section i{
+        font-size: 20px;
+    }
+
+    .input_section img{
+        width: 25px;
+        height: 25px;
+    }
+
+    .mobile_icon{
+        font-size: 10px;
+    }
+
+    .course_dropdown, .branch_dropdown{
+        margin: 15px auto;
+    }
+
+    .course_dropdown:hover, .branch_dropdown:hover {
+        transform: translateY(0px);
+    }
+
+    .dropdown_container{
+        /* border: 2px solid red; */
+        padding: 0px 50px;
+    }
+
+    .submit{
+        margin: auto;
+        width: 100%;
+    }
+
+    input[type="submit"]{
+        font-size: 15px;
+    }
+
+    .rememberme, #forgetpass{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5px 0 0 0;
+    }
+}
+
+@media screen and (max-width: 320px){
+    .dropdown_container{
+        /* border: 2px solid red; */
+        padding: 0px 25px;
+    }
+}
+
+@media screen and (max-width: 245px){
+    .input_section i, .mobile_icon{
+        font-size: 16px;
+    }
+
+    input[type="submit"]{
+        /* border: 2px solid yellow; */
+        margin: 0px;
+        width: 100%;
+        font-size: 12px;
+    }    
+    #openeye, #closeeye{
+        display: flex;
+        align-items: center;
+        font-size: 15px;
+    }
+}
